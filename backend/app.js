@@ -1,9 +1,9 @@
 import express from 'express'
 
-import connect from './config/db.js'
+import connection from './config/db.js'
 import router from './routes/employe.route.js'
 
-// connect()
+connection()
 
 const app=express()
 app.use(express.json())

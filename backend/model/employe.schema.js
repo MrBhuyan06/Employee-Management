@@ -4,13 +4,13 @@ import Role from "../utills/getRole.js";
 
 const employeSchema= mongoose.Schema(
     {
-        Name:
+        name:
         {
             type:String,
             required:[true, "Name is required Attribute"],
             maxLength:[20, "Name must not not be greater then 20 charater"]
         },
-        Desgination:
+        desgination:
         {
             type:String,
             enum:Object.values(Role),
