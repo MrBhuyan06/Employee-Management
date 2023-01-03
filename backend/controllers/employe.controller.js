@@ -47,7 +47,7 @@ export const createEmp= async (req, res) =>
 }
 
 /**
- * update a create Employe
+ * get a create Employe
  * 
  */
 
@@ -56,6 +56,28 @@ export const getEmp= async(req, res) =>
     try {
       const emp=await employeSchema.find();
      res.status(201).json({
+      success:true,
+      emp
+     })
+    } catch (error) {
+      console.log(error);
+      res.json({
+        success:false,
+        message:error.message
+      })
+    }
+}
+
+/**
+ * update a create Employe
+ * 
+ */
+
+export const updateEmp= async(req, res) =>
+{
+    try {
+      const emp=await employeSchema.findByIdAndUpdate(req.params.id, req.body);
+     res.status(200).json({
       success:true,
       emp
      })
