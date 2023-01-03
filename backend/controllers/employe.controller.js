@@ -89,3 +89,25 @@ export const updateEmp= async(req, res) =>
       })
     }
 }
+/**
+ * delete a create Employe
+ * 
+ */
+
+export const deleteEmp= async(req, res) =>
+{
+    try {
+      const emp=await employeSchema.findByIdAndDelete(req.params.id);
+     res.status(200).json({
+      success:true,
+      emp,
+      message:"Emp is delete sucessfully"
+     })
+    } catch (error) {
+      console.log(error);
+      res.json({
+        success:false,
+        message:error.message
+      })
+    }
+}
