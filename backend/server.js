@@ -1,5 +1,6 @@
 import app from "./app.js"
-const PORT= 3000
+import CONFIG from "./config/index.js";
+const PORT= CONFIG.PORT
 
 app.listen(PORT, (req, res) =>
 {
